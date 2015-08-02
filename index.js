@@ -33,7 +33,8 @@ function plugin(options) {
         if (match(file, '**/*.{html,htm}')) {
           debug('processing file: ' + file);
           var html = cheerio.load(files[file].contents.toString());
-          files[file].contents = modify(html, files[file]);
+          modify(html, files[file], file)
+          files[file].contents = html.html();
         }
       });
     });
@@ -92,7 +93,6 @@ function normalize(options) {
       res.forEach(function(fn) {
         $el = $el[fn](opts[fn]);
       });
-      return $.html();
     }
   }
 }

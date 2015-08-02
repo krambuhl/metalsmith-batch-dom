@@ -28,22 +28,34 @@ var config = {
   }
 };
 
-function fnConfig($, data, opts) {
-  var links = $('a').filter(function() {
-    var href = $(tag).attr('href');
-    return href.indexOf('http://www.google.com') !== -1 
-        && href.indexOf('http://google.com') !== -1;
-  }).attr({
-    rel: 'external',
-    target: '_blank'
-  }).addClass('is-external');
-}
-
-metalsmith
-  .use(dom(config))
-  .use(dom([config, fnConfig]));
+metalsmith.use(dom({
+  'a': {
+    filter: function(tag) {
+      var href = $(tag).attr('href');
+      return href.indexOf('http://www.google.com') !== -1 
+          && href.indexOf('http://google.com') !== -1;
+    },
+    attr: {
+      rel: 'external',
+      target: '_blank',
+    },
+    addClass: 'is-external'
+  }
+}))
 ```
 
+### Function options
+
+```
+var dom = require('metalsmith-dom');
+
+metalsmith.use(dom(function($, metadata, filename) {
+  $('a').each(function() {
+    var link = $(this);
+    link.attr('href', '#!' + link.attr('href'));
+  })
+}));
+```
 
 ## License
 
