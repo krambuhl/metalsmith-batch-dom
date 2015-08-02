@@ -10,6 +10,8 @@ Processes HTML pages and modifies dom elements using [Cheerio](https://github.co
 
 Pass with options to `Metalsmith#use`:
 
+##### Config Object Style
+
 ```js
 var dom = require('metalsmith-dom');
 
@@ -29,7 +31,7 @@ metalsmith.use(dom({
 }))
 ```
 
-### Function options
+##### Function Option Style
 
 ```js
 var dom = require('metalsmith-dom');
