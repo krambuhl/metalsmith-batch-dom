@@ -13,21 +13,6 @@ Pass with options to `Metalsmith#use`:
 ```js
 var dom = require('metalsmith-dom');
 
-var config = {
-  'a': {
-    filter: function(tag) {
-      var href = $(tag).attr('href');
-      return href.indexOf('http://www.google.com') !== -1 
-          && href.indexOf('http://google.com') !== -1;
-    },
-    attr: {
-      rel: 'external',
-      target: '_blank',
-    },
-    addClass: 'is-external'
-  }
-};
-
 metalsmith.use(dom({
   'a': {
     filter: function() {
@@ -46,7 +31,7 @@ metalsmith.use(dom({
 
 ### Function options
 
-```
+```js
 var dom = require('metalsmith-dom');
 
 metalsmith.use(dom(function($, metadata, filename) {
