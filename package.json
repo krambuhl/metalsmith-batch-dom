@@ -1,0 +1,22 @@
+{
+  "name": "metalsmith-dom",
+  "description": "Processes HTML pages and modifies dom elements.",
+  "repository": "git://github.com/krambuhl/metalsmith-dom.git",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Evan Krambuhl <thekrambuhl@gmail.com> (http://stumptownbear.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.test.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "debug": "^2.2.0",
+    "flatten": "0.0.1",
+    "minimatch": "^2.0.10"
+  },
+  "devDependencies": {
+    "metalsmith": "^1.7.0",
+    "tape": "^4.0.1"
+  }
+}
