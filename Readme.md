@@ -30,8 +30,8 @@ var config = {
 
 metalsmith.use(dom({
   'a': {
-    filter: function(tag) {
-      var href = $(tag).attr('href');
+    filter: function() {
+      var href = $(this).attr('href');
       return href.indexOf('http://www.google.com') !== -1 
           && href.indexOf('http://google.com') !== -1;
     },
