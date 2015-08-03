@@ -12,6 +12,8 @@ Pass with options to `Metalsmith#use`:
 
 ##### Config Object Style
 
+Dom manipulation can be defined using an object where the key is the dom selector and value is an object of functions keys and arguments values.
+
 ```js
 var dom = require('metalsmith-dom');
 
@@ -31,7 +33,13 @@ metalsmith.use(dom({
 }))
 ```
 
+###### A Note About Ordering
+
+While in json config mode, filtering type functions (filter, reject, eq) are preferred before manipulation type functions (attr, addClass).  If you need to customize this behavior, use the function style configuration.
+
 ##### Function Option Style
+
+A function can be used as options. The function is called for each file with the cheerio html, file metadata, and filename as arguments.
 
 ```js
 var dom = require('metalsmith-dom');

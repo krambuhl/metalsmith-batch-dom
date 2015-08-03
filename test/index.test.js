@@ -35,13 +35,13 @@ var config = {
     removeAttr: 'ext',
     addClass: 'is-external'
   }
-}
+};
 
 function fnConfig($, data) {
-  var links = $('a').each(function() {
+  $('a').each(function() {
     var link = $(this);
-    link.attr('href', '#!' + link.attr('href'))
-  })
+    link.attr('href', '#!' + link.attr('href'));
+  });
 
   return $.html();
 }
@@ -52,14 +52,14 @@ test('should accept a object as an argument', function(t) {
   plugtest(config, function(err, files) {
     t.equal(files['d.html'].$('#ext-link').attr('rel'), 'external');
   });
-})
+});
 
 test('should accept a function as an argument', function(t) {
   t.plan(1);
   plugtest(fnConfig, function(err, files) {
     t.equal(files['d.html'].$('#link').attr('href'), '#!/portfolio');
   });
-})
+});
 
 test('should accept a mixed array as an argument', function(t) {
   t.plan(2);
@@ -67,11 +67,11 @@ test('should accept a mixed array as an argument', function(t) {
     t.equal(files['d.html'].$('#ext-link').attr('rel'), 'external');
     t.equal(files['d.html'].$('#link').attr('href'), '#!/portfolio');
   });
-})
+});
 
 test('should only process html filesz', function(t) {
   t.plan(1);
   plugtest(config, function(err, files) {
     t.equal(files['c.css'].$('#css-linkcheck').attr('rel') === undefined, true);
   });
-})
+});
