@@ -48,9 +48,11 @@ function fnConfig($, data) {
 
 
 test('should accept a object as an argument', function(t) {
-  t.plan(1);
+  t.plan(3);
   plugtest(config, function(err, files) {
     t.equal(files['d.html'].$('#ext-link').attr('rel'), 'external');
+    t.equal(files['d.html'].$('#ext-link').attr('target'), '_blank');
+    t.equal(files['d.html'].$('#ext-link').hasClass('is-external'), true);
   });
 });
 

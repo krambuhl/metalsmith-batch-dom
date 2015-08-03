@@ -1,4 +1,4 @@
-var debug = require('debug')('metalsmith-dom');
+var debug = require('debug')('metalsmith-batch-dom');
 var match = require('minimatch');
 var cheerio = require('cheerio');
 var flatten = require('flatten');
