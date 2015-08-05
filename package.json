@@ -2,7 +2,7 @@
   "name": "metalsmith-batch-dom",
   "description": "Processes HTML pages and modifies dom elements.",
   "repository": "git://github.com/krambuhl/metalsmith-batch-dom.git",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "author": "Evan Krambuhl <thekrambuhl@gmail.com> (http://stumptownbear.com)",
   "main": "index.js",
@@ -18,5 +18,13 @@
   "devDependencies": {
     "metalsmith": "^1.7.0",
     "tape": "^4.0.1"
-  }
+  },
+  "keywords": [
+    "metalsmith",
+    "metalsmith-plugin",
+    "dom",
+    "cheerio",
+    "jquery",
+    "batch"
+  ]
 }
