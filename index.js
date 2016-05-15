@@ -34,7 +34,7 @@ function plugin(options) {
           debug('processing file: ' + file);
           var html = cheerio.load(files[file].contents.toString());
           modify(html, files[file], file)
-          files[file].contents = html.html();
+          files[file].contents = new Buffer(html.html());
         }
       });
     });
