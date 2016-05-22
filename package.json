@@ -2,7 +2,7 @@
   "name": "metalsmith-batch-dom",
   "description": "Processes HTML pages and modifies dom elements.",
   "repository": "git://github.com/krambuhl/metalsmith-batch-dom.git",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "author": "Evan Krambuhl <thekrambuhl@gmail.com> (http://stumptownbear.com)",
   "main": "index.js",
